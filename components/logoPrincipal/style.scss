@@ -1,0 +1,30 @@
+.img-fluid{
+    width: 100% \9;
+    max-height: 224px;
+    display: inline-block;    
+    @include media-breakpoint-up(xs) { 
+        margin:8px 0;
+     }
+    @include media-breakpoint-up(sm) { 
+        margin:10px 0;
+     }
+    @include media-breakpoint-up(md) { 
+        margin:20px 0px;
+     }
+    @include media-breakpoint-up(lg) { 
+        margin:25px 0;
+     }
+    @include media-breakpoint-up(xl) { 
+        margin:30px 0;
+
+     }
+    
+}
+
+
+
+
+
+.text-center {
+    text-align: center;
+}

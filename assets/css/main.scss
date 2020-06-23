@@ -1,0 +1,97 @@
+@import "~/node_modules/bootstrap/scss/bootstrap.scss";
+
+$redHeader: #E43636;
+$redLight: #e49e97;
+$redDark: #a03400;
+$redForms: #ffca00;
+$yellowDefault: #ffca00;
+$fontSizeDefault: 14px;
+$inputHeightDefault: 34px;
+$textareaHeightDefault: 67px;
+
+$font-family-sans-serif: 'Roboto', sans-serif !default;
+
+
+//Cross browser CSS3 mixins
+
+
+@mixin box-shadow($left, $top, $blurRadius, $spreadRadius, $color) {
+	box-shadow: $left $top $blurRadius $spreadRadius $color;
+	-webkit-box-shadow: $left $top $blurRadius $spreadRadius $color;
+	-moz-box-shadow: $left $top $blurRadius $spreadRadius $color;
+}
+
+@mixin transition($property, $duration, $easing: linear) {
+	transition: $property $duration $easing;
+	-webkit-transition: $property $duration $easing;
+	-moz-transition: $property $duration $easing;
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+	border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+	-webkit-border-top-left-radius: $topleft;
+	-webkit-border-top-right-radius: $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius: $bottomleft;
+	-moz-border-radius-topleft: $topleft;
+	-moz-border-radius-topright: $topright;
+	-moz-border-radius-bottomright: $bottomright;
+	-moz-border-radius-bottomleft: $bottomleft;
+}
+
+@mixin gradient($color1, $color2) {
+	background-color: $color1;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2});
+	background-image: -moz-linear-gradient(center top, $color1, $color2);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
+}
+
+@mixin inputDefault() {
+    border: 1px solid $redDark;
+    @include border-radius(5px);
+    color: $redDark;
+    width: 100%;
+    font-family: $font-family-sans-serif;
+    font-size: $fontSizeDefault;
+}
+
+.form-group--error{
+	@include inputDefault();
+	background: $redLight;
+	color: $white !important;
+}
+
+.inputText{
+    @include inputDefault();
+    margin: 8px 0;
+    height: $inputHeightDefault;
+}
+
+.textArea {
+    @include inputDefault();
+    height: $textareaHeightDefault;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $redDark;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $redDark;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $redDark;
+  }
+
+
